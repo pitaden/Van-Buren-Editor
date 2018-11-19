@@ -153,6 +153,26 @@ void CRTEditMenu()
 			break;
 	}
 }
+
+//////////I can't compile/test this bit right now, so it probably won't work. (if i bother to add code) -pitaden
+void FindInFile()
+{
+	printf( "FindInFile() called." );
+	//0. Figure out how FILE works. If it doesn't work as a char array, make it into one.
+	/* pseudocode time
+	
+	char array (file)
+	char array (thing to search for)
+	N = (file).find(thing to search for)
+	if N = n_pos
+		text wasn't found in the file
+	else
+		output N, which is the position (thing to search for) is at
+		
+	Unfortunately, the thing i'm basing this pseudocode on is C++, not C. Time to figure out C.
+	*/
+}
+
 int main(void)
 {
 	int StartMenuInput;
