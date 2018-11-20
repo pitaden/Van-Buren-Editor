@@ -3,9 +3,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-	char /*ch, */source_file_name[256]/*, target_file_name[256]*/; // The name of the files to input and output
-	char race_input[3]/*, gender_input[1], body_input[7]*/; // The values to be changed
-	FILE *source_file/*, *target_file*/; // The files to be input and output
+	//SORTA-UNUSED VARIABLES
+	/*
+	char target_file_name[256]
+	char gender_input[1]
+	char body_input[7]
+	FILE *target_file
+	*/
+	//These'll be needed in the future, but for now, they're unused.
+
+	char source_file_name[256], target_file_name[256]; // The name of the files to input and output
+	char race_input[3], gender_input[1], body_input[7]; // The values to be changed
+	FILE *source_file, *target_file; // The files to be input and output
 
 struct CRT { // CRT File: For NPCs, Creatures, and PC
 	int IsNPC;
@@ -38,8 +47,9 @@ void CRTEdit()
 	printf( "CRT Edit called.\n" ); // Development Feature - Delete
 	fflush( source_file_name )
 	printf("Enter the name of the .CRT file you wish to modify.\n");
-	fgets( source_file_name, sizeof( source_file_name ), stdin ); // Input File name to be imported
-	source_file_name[strlen(source_file_name)-1] = 0x00; // something to do with string length
+	fgets( source_file_name, sizeof( source_file_name ), stdin ); // Input file name/size
+		// n-1 thing for fgets(char *string, int n, FILE *stream), maybe
+	source_file_name[strlen(source_file_name)-1] = 0x00; 
 
 	printf("Reading Input File...\n");
 	source_file = fopen(source_file_name,"r+"); // read+write binary mode
@@ -72,7 +82,7 @@ void SetRace()
 }
 void SetGender()
 {
-    printf( "Set Gender called.\n" ); // Development Feature - Delete
+	printf( "Set Gender called.\n" ); // Development Feature - Delete
 //	printf( "Enter the desired 1-character gender type.\n" );
 //	fgets( gender_input, sizeof( gender_input ), stdin ); // Input new gender type
 //	printf( "Current gender type : %s", gender_input ); // Development Feature - Delete
@@ -86,7 +96,7 @@ void SetGender()
 }
 void SetBody()
 {
-    printf( "Set Body called.\n" ); // Development Feature - Delete
+	printf( "Set Body called.\n" ); // Development Feature - Delete
 //	printf( "Enter the desired 3-character body type.\n" );
 //	fgets( body_input, sizeof( body_input ), stdin ); // Input new body type
 //	printf( "Current body type : %s", body_input ); // Development Feature - Delete
