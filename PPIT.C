@@ -137,7 +137,8 @@ void CRTEditMenu()
 	printf( "3. Edit Body\n" );
 	printf( "4. Hex View\n" );
 	printf( "5. Exit\n" );
-	printf( "Note: Please refer to Technical Info.txt\n" );
+//	printf( "Note: Please refer to Technical Info.txt\n" );
+	// this doesn't have a technical info.txt, so until we make one or import it, we might as well leave this commented
 	scanf( "%d", &EditMenuInput );
 	printf( "Input is %d\n", EditMenuInput ); // Development Feature - Delete
 	switch ( EditMenuInput ) {
@@ -164,7 +165,6 @@ void CRTEditMenu()
 	}
 }
 
-//////////I can't compile/test this bit right now, so it probably won't work. (if i bother to add code) -pitaden
 void FindInFile()
 {
 	printf( "FindInFile() called." );
